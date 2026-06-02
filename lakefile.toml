@@ -1,0 +1,23 @@
+name = "QLam"
+version = "0.1.0"
+keywords = ["math"]
+defaultTargets = ["QLam"]
+
+[leanOptions]
+pp.unicode.fun = true # pretty-prints `fun a ↦ b`
+relaxedAutoImplicit = false
+weak.linter.mathlibStandardSet = true
+maxSynthPendingDepth = 3
+
+[[require]]
+name = "quantumlib"
+git = "https://github.com/inQWIRE/LeanQuantum"
+rev = "main"
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.30.0-rc2"
+
+[[lean_lib]]
+name = "QLam"
