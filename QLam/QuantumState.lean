@@ -9,8 +9,8 @@ open NNReal
 abbrev Square n := Matrix (Fin n) (Fin n) ℂ
 abbrev Vect n := Matrix (Fin n) (Fin 1) ℂ
 
-def ket0 : Vect 2 := ![![0],![1]]
-def ket1 : Vect 2 := ![![1],![0]]
+def ket0 : Vect 2 := ![![1],![0]]
+def ket1 : Vect 2 := ![![0],![1]]
 
 -- Tensor product
 def kronecker [Ring R] (A : Matrix (Fin a₁) (Fin a₂) R) (B : Matrix (Fin b₁) (Fin b₂) R) :
@@ -19,7 +19,7 @@ def kronecker [Ring R] (A : Matrix (Fin a₁) (Fin a₂) R) (B : Matrix (Fin b�
 infixl:999 " ⊗ " => kronecker
 
 def identity (n : ℕ) : Square n :=
-  Matrix.of fun i j => if i = j then 0 else 1
+  Matrix.of fun i j => if i = j then 1 else 0
 
 noncomputable def hadamard : Square 2 :=
   ((sqrt 2)⁻¹ : ℂ) • ![![1, 1],

@@ -72,7 +72,7 @@ inductive has_type : Ctx → Ctx → Tm → Ty → Prop where
     has_type Γ (conj Δ₁ Δ₂ h₁) (let_bang x A u t) B
  
 | zero_bit : has_type Γ ∅ zero bit
-| one_bit : has_type Γ ∅ zero bit
+| one_bit : has_type Γ ∅ one bit
 | if_type (h : Disjoint (Dom Δ₁) (Dom Δ₂)) :
   has_type Γ Δ₁ t bit →
   has_type Γ Δ₂ u A →
